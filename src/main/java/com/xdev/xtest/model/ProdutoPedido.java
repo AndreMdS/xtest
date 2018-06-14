@@ -15,28 +15,27 @@ import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
- * @author X
+ * @author A687747
  */
 
 @Entity
-@Table(name = "pedido")
-public class Pedido implements Serializable {
- 
+@Table(name = "produto_pedido")
+public class ProdutoPedido implements Serializable {
+    
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     private Long Id;
     
-    @Column(name = "cliente_id")
-    private Long clienteId;
+    @Column(name = "pedido_id")
+    private Long pedidoId;
     
-    @Column(name = "endereco_id")
-    private Long enderecoId;
+    @Column(name = "produto_id")
+    private Long produtoId;
     
-    @Column(name = "valor_total")
-    private Float valorTotal;
+    @Column(name = "quantidade")
+    private Integer quantidade;
 
-    
     public Long getId() {
         return Id;
     }
@@ -45,33 +44,33 @@ public class Pedido implements Serializable {
         this.Id = Id;
     }
 
-    public Long getClienteId() {
-        return clienteId;
+    public Long getPedidoId() {
+        return pedidoId;
     }
 
-    public void setClienteId(Long clienteId) {
-        this.clienteId = clienteId;
+    public void setPedidoId(Long pedidoId) {
+        this.pedidoId = pedidoId;
     }
 
-    public Long getEnderecoId() {
-        return enderecoId;
+    public Long getProdutoId() {
+        return produtoId;
     }
 
-    public void setEnderecoId(Long enderecoId) {
-        this.enderecoId = enderecoId;
+    public void setProdutoId(Long produtoId) {
+        this.produtoId = produtoId;
     }
 
-    public Float getValorTotal() {
-        return valorTotal;
+    public Integer getQuantidade() {
+        return quantidade;
     }
 
-    public void setValorTotal(Float valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
     }
 
     @Override
     public String toString() {
-        return "Pedido{" + "Id=" + Id + ", clienteId=" + clienteId + ", enderecoId=" + enderecoId + ", valorTotal=" + valorTotal + '}';
+        return "ProdutoPedido{" + "Id=" + Id + ", pedidoId=" + pedidoId + ", produtoId=" + produtoId + ", quantidade=" + quantidade + '}';
     }
     
 }

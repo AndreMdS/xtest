@@ -5,10 +5,16 @@
  */
 package com.xdev.xtest.controller;
 
+import org.springframework.stereotype.Controller;
+
 /**
  *
  * @author X
  */
+
+@Controller
 public class MainController {
+    
+    
     
 }
