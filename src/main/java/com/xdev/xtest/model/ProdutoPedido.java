@@ -21,6 +21,15 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "produto_pedido")
 public class ProdutoPedido implements Serializable {
+
+    public ProdutoPedido() {
+    }
+
+    public ProdutoPedido(Long pedidoId, Long produtoId, Integer quantidade) {
+        this.pedidoId = pedidoId;
+        this.produtoId = produtoId;
+        this.quantidade = quantidade;
+    }
     
     @Id
     @GeneratedValue(generator = "increment")

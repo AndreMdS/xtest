@@ -21,6 +21,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "endereco")
 public class Endereco implements Serializable {
+
+    public Endereco() {
+    }
+
+    public Endereco(String logradouro, Integer numero, String complemento, String cidade, String estado, Integer cep, Long clienteId) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+        this.clienteId = clienteId;
+    }
     
     @Id
     @GeneratedValue(generator = "increment")
@@ -44,6 +57,9 @@ public class Endereco implements Serializable {
     
     @Column(name = "cep")
     private Integer cep;
+    
+    @Column(name = "cliente_id")
+    private Long clienteId;
 
     public Long getId() {
         return Id;
@@ -101,10 +117,17 @@ public class Endereco implements Serializable {
         this.cep = cep;
     }
 
+    public Long getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
+    }
+
     @Override
     public String toString() {
-        return "Endereco{" + "Id=" + Id + ", logradouro=" + logradouro + ", numero=" + numero + ", complemento=" + complemento + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep + '}';
+        return "Endereco{" + "Id=" + Id + ", logradouro=" + logradouro + ", numero=" + numero + ", complemento=" + complemento + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep + ", clienteId=" + clienteId + '}';
     }
-    
     
 }

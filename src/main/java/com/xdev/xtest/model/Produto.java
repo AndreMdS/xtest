@@ -19,9 +19,23 @@ import org.hibernate.annotations.GenericGenerator;
  */
 
 @Entity
-@Table(name = "produto_pedido")
+@Table(name = "produto")
 public class Produto implements Serializable {
-    
+
+    public Produto() {
+    }
+
+    public Produto(String nome, Float valor) {
+        this.nome = nome;
+        this.valor = valor;
+    }
+
+    public Produto(Long Id, String nome, Float valor) {
+        this.Id = Id;
+        this.nome = nome;
+        this.valor = valor;
+    }
+
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
